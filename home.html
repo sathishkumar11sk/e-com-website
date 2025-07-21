@@ -141,36 +141,37 @@
             <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
         </div>
     </div>
+<!-- about and contact stack section -->
 
-    <!-- About Section -->
-    <section id="about" class="hero">
-        <h2 class="section-title">About Gamers Hub</h2>
-        <p style="max-width: 800px; margin: auto; font-size: 1.1rem;">
-            Gamers Hub is your one-stop destination for the latest and greatest in tech gadgets, gaming devices, and accessories. 
-            Whether you're a hardcore gamer or just looking for premium electronics, we bring you the best quality and unbeatable prices. 
-            Founded by passionate tech enthusiasts, our mission is to deliver excellence and innovation with every product we showcase.
-        </p>
+    <section class="about-contact-section container">
+    <!-- About (Left Side) -->
+        <div class="about-box">
+            <h2>About Gamers Hub</h2>
+            <p>
+           Welcome to Gamers Hub, your ultimate destination for high-performance gaming gear and cutting-edge tech accessories.
+We specialize in offering top-tier products that enhance your gaming experience — from precision gaming mice and mechanical keyboards to premium headphones and consoles.
+
+Our mission is to deliver the best value, quality, and innovation to gamers of all levels.
+Whether you're a casual player or an esports enthusiast, we bring you curated selections trusted by thousands.
+
+At Gamers Hub, we’re not just about selling gadgets — we’re about building a community of passionate players.
+With unbeatable prices, lightning-fast support, and the latest releases always in stock, your satisfaction is our priority.
+Join us and level up your setup like a true pro.
+            </p>
+        </div>
+
+    <!-- Contact (Right Side) -->
+        <div class="contact-box">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+            </form>
+        </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="hero">
-        <h2 class="section-title">Contact Us</h2>
-        <form id="contact-form" onsubmit="submitContactForm(event)" style="max-width: 600px; margin: auto; text-align: left;">
-            <div style="margin-bottom: 1rem;">
-                <label for="name" style="display: block; font-weight: bold; color: white;">Name</label>
-                <input type="text" id="name" name="name" required style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
-            </div>
-            <div style="margin-bottom: 1rem;">
-                <label for="email" style="display: block; font-weight: bold; color: white;">Email</label>
-                <input type="email" id="email" name="email" required style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;">
-            </div>
-            <div style="margin-bottom: 1rem;">
-                <label for="message" style="display: block; font-weight: bold; color: white;">Message</label>
-                <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc;"></textarea>
-            </div>
-            <button type="submit" class="cta-button">Send Message</button>
-        </form>
-    </section>
 
     <script>
         const products = [
