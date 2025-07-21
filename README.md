@@ -3,7 +3,7 @@
 
 Gamers Hub is a modern, fully front-end e-commerce platform designed for tech enthusiasts and gamers. This project showcases a stylish and responsive UI with features like product filtering, cart functionality, localStorage-based login/signup with avatar selection, and more — all without any backend.
 
-![Gamers Hub ]([https://your-screenshot-url.com](https://ecomgamershub.netlify.app/)) 
+![Gamers Hub ](https://ecomgamershub.netlify.app/) 
 
 ---
 
