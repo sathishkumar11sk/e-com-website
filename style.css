@@ -454,14 +454,16 @@
         }
 
         /* Cart Styles */
+        
         #cart-items {
-        max-height: 300px;
+        max-height: 400px;
+        max-width: 1000px;
         overflow-y: auto;
         margin-bottom: 1rem;
         }
 
         .cart-item {
-            display: flex;
+            display: grid;
             align-items: center;
             gap: 1rem;
             padding: 1rem;
@@ -469,8 +471,8 @@
         }
 
         .cart-item img {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
             border-radius: 10px;
         }
@@ -490,7 +492,7 @@
         }
 
         .quantity-controls {
-            display: flex;
+            display: block;
             align-items: center;
             gap: 0.5rem;
         }
