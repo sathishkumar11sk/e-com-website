@@ -143,35 +143,36 @@
     </div>
 <!-- about and contact stack section -->
 
-    <section class="about-contact-section container">
+    <section class="about-contact-section container" id="about">
+
     <!-- About (Left Side) -->
         <div class="about-box">
             <h2>About Gamers Hub</h2>
             <p>
            Welcome to Gamers Hub, your ultimate destination for high-performance gaming gear and cutting-edge tech accessories.
-We specialize in offering top-tier products that enhance your gaming experience — from precision gaming mice and mechanical keyboards to premium headphones and consoles.
+           We specialize in offering top-tier products that enhance your gaming experience — from precision gaming mice and mechanical keyboards to premium headphones and consoles.
 
-Our mission is to deliver the best value, quality, and innovation to gamers of all levels.
-Whether you're a casual player or an esports enthusiast, we bring you curated selections trusted by thousands.
+           Our mission is to deliver the best value, quality, and innovation to gamers of all levels.
+           Whether you're a casual player or an esports enthusiast, we bring you curated selections trusted by thousands.
 
-At Gamers Hub, we’re not just about selling gadgets — we’re about building a community of passionate players.
-With unbeatable prices, lightning-fast support, and the latest releases always in stock, your satisfaction is our priority.
-Join us and level up your setup like a true pro.
+           At Gamers Hub, we’re not just about selling gadgets — we’re about building a community of passionate players.
+           With unbeatable prices, lightning-fast support, and the latest releases always in stock, your satisfaction is our priority.
+           Join us and level up your setup like a true pro.
             </p>
         </div>
 
     <!-- Contact (Right Side) -->
-        <div class="contact-box">
-            <h2>Contact Us</h2>
-            <form class="contact-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" required></textarea>
+        <div class="contact-box" id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form" id="contact-form" onsubmit="submitContactForm(event)">
+            <input type="text" id="name" placeholder="Your Name" required />
+<input type="email" id="email" placeholder="Your Email" required />
+<textarea id="message" placeholder="Your Message" required></textarea>
+
             <button type="submit">Send Message</button>
             </form>
         </div>
     </section>
-
 
     <script>
         const products = [
@@ -183,13 +184,38 @@ Join us and level up your setup like a true pro.
             { id: 6, name: "Gaming Mouse", price: 2299, image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=300&fit=crop", category: "accessories", description: "Responsive and lightweight gaming mouse with customizable buttons" },
             { id: 7, name: "Xbox Controller", price: 4599, image: "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=400&h=300&fit=crop", category: "accessories", description: "Ergonomic controller compatible with PC and Xbox devices" },
             { id: 8, name: "Cooler Stand", price: 3999, image: "https://images-cdn.ubuy.co.in/633aba5bb961822663096fbb-topmate-c11-laptop-cooling-pad-rgb.jpg", category: "accessories", description: "Laptop cooling stand with adjustable height and dual fans" },
-            { id: 9, name: "iPhone 15 Pro", price: 110999, category: "smartphones", image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=300&fit=crop", description: "Latest iPhone with advanced camera and A17 Pro chip" },
-            { id: 10, name: "MacBook Pro M3", price: 251599, category: "laptops", image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop", description: "Powerful laptop for professionals with M3 chip" },
-            { id: 11, name: "AirPods Pro", price: 19249, category: "headphones", image: "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=400&h=300&fit=crop", description: "Wireless earbuds with active noise cancellation" },
-            { id: 12, name: "iPad Air", price: 15599, category: "tablets", image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop", description: "Versatile tablet perfect for work and creativity" },
-            { id: 13, name: "Samsung Galaxy S24", price: 115999, category: "smartphones", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop", description: "Android flagship with exceptional camera and display" },
-            { id: 14, name: "Dell XPS 13", price: 751299, category: "laptops", image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop", description: "Ultrabook with stunning InfinityEdge display" },
-            { id: 15, name: "Sony WH-1000XM5", price: 15349, category: "headphones", image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=300&fit=crop", description: "Premium noise-cancelling wireless headphones" }
+            { id: 9, name: "iPhone 15 Pro", price: 110999, image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=300&fit=crop",  category: "smartphones", description: "Latest iPhone with advanced camera and A17 Pro chip" },
+            { id: 10, name: "MacBook Pro M3", price: 251599, image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&h=300&fit=crop", category: "laptops",  description: "Powerful laptop for professionals with M3 chip" },
+            { id: 11, name: "AirPods Pro", price: 19249, image: "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=400&h=300&fit=crop", category: "headphones", description: "Wireless earbuds with active noise cancellation" },
+            { id: 12, name: "iPad Air", price: 15599, image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop", category: "tablets", description: "Versatile tablet perfect for work and creativity" },
+            { id: 13, name: "Samsung Galaxy S24", price: 115999, image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=300&fit=crop", category: "smartphones", description: "Android flagship with exceptional camera and display" },
+            { id: 14, name: "Dell XPS 13", price: 751299, image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop", category: "laptops", description: "Ultrabook with stunning InfinityEdge display" },
+            { id: 15, name: "Sony WH-1000XM5", price: 15349, image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400&h=300&fit=crop", category: "headphones", description: "Premium noise-cancelling wireless headphones" },
+            { id: 16, name: "Acer Predator", price: 119999, image: "https://images-cdn.ubuy.co.in/636e31913ba3872d195ab3f3-acer-predator-helios-300-gaming-laptop.jpg", category: "laptops", description: "Gaming beast with turbo cooling" },
+            { id: 17, name: "MSI Stealth", price: 134999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdIubQ0k4OXl-kTYkfLy_DfkmlbVcSissEUwoxfcI8NVnrEDNAyyxwjz8V1oU4aUGvxWw&usqp=CAU", category: "laptops", description: "Slim and powerful with RGB keyboard" },
+            { id: 18, name: "Razer Blade", price: 179999, image: "https://images-cdn.ubuy.qa/6664a702975d40493c63043b-razer-blade-16-2024-gaming-laptop.jpg", category: "laptops", description: "Elegant and ultra-fast laptop" },
+            { id: 19, name: "Gigabyte Aorus", price: 145999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvgI8Piwn8pyZ9SSsvz-e_g68ZsbBQG2P14Z61OJTMuK-gdAtTX4lYPj8opZGbTYU7M9g&usqp=CAU", category: "laptops", description: "High-performance machine with gamer aesthetics" },
+            { id: 20, name: "Samsung Galaxy Book3", price: 94999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3mNxrBErAJmjKqiq_qm7NFmEaaRRJDIrpPp8HVMV-Ni93mtRGuH9tY1PhTVZuOhsBWOk&usqp=CAU", category: "laptops", description: "Lightweight with AMOLED screen" },
+            { id: 21, name: "Logitech G502", price: 3499, image: "https://i.rtings.com/assets/products/rEgUwq9o/logitech-g502-x-plus/design-medium.jpg?format=auto", category: "accessories", description: "High precision gaming mouse" },
+            { id: 22, name: "Corsair K95", price: 8999, image: "https://images-cdn.ubuy.co.in/633b9fd295b18129743167aa-corsair-k95-rgb-platinum-xt-mechanical.jpg", category: "accessories", description: "Mechanical keyboard with RGB" },
+            { id: 23, name: "Elgato Stream Deck", price: 11999, image: "https://m.media-amazon.com/images/I/71aY+mfIxiL.jpg", category: "accessories", description: "Streaming control panel" },
+            { id: 24, name: "Razer Kraken", price: 5999, image: "https://themaczone.in/wp-content/uploads/2025/01/Razer-Kraken-X-For-Console-Gaming-Headset-2-700x700.jpg", category: "accessories", description: "Gaming headset with surround sound" },
+            { id: 25, name: "SteelSeries QcK", price: 1499, image: "https://usb.brando.com/prod_img/zoom/UPCSF036900_8.jpg", "category": "accessories", "description": "Large smooth mousepad" },
+            { id: 26, name: "OnePlus 12", price: 69999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZhgbnhvuS4Nie-n8Ylpb9xMnUWPqkQvRtYiR7L-hDX-FN4zqXXXJaizaEnNkF93zvEC4&usqp=CAU", category: "smartphones", description: "Flagship killer with Snapdragon 8 Gen 2" },
+            { id: 27, name: "Google Pixel 8 Pro", price: 99999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlzMHwrw2MLy-LkgZUOaG-6Gu5jjYGHz8hKZrK0T_0RQ_A8DRAy-6Xmt5d1WFsRxzvSG4&usqp=CAU", category: "smartphones", description: "Camera king with AI features" },
+            { id: 28, name: "Nothing Phone 2", price: 44999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMLgQYCtz7IuUeZRYIMB_alpJ9evDgUzm4wb7k0t7A_0tSY-EH5yVGmX9PbJDsFXpyN-w&usqp=CAU", category: "smartphones", description: "Unique design with glyph interface" },
+            { id: 29, name: "Xiaomi 14 Ultra", price: 84999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCYKMPV1pK4Y3LWS0jVFcEYSdgYTTCt3RaQh7Hoq5A6tLXUD40UPDxrgzbEmdaqDQN5w8&usqp=CAU", category: "smartphones", description: "Leica camera system and flagship chip" },
+            { id: 30, name: "Asus ROG Phone 8", price: 85999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL6TDZgLwoM6ho5c_BixeCOrWnqkj-PglTF6FHAwO3-JADM_q_sOA86tks7xAJIz2OOX8&usqp=CAU", category: "smartphones", description: "Gaming smartphone with AirTriggers" },
+            { id: 31, name: "Boat Rockerz 550", price: 2499, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeik0FsDqcJBK4PTo-5PAXXaeJS3-98p4jwleOATqeYlcGVl_QZ48tc5qvCsyRzRlbJE4&usqp=CAU", category: "headphones", description: "Wireless over-ear with deep bass" },
+            { id: 32, name: "JBL Tune 760NC", price: 5999, image: "https://m.media-amazon.com/images/I/71x1ljuwF8L._UF1000,1000_QL80_.jpg", category: "headphones", description: "Noise-canceling headphones with long battery" },
+            { id: 33, name: "Sennheiser HD 450BT", price: 8499, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVvEIflF53FSKaaDMIwTQitUdYT_vbd0CtI06R7fsBnIvQWf0P6KEpbDji73FwMjoeyRo&usqp=CAU", category: "headphones", description: "Premium wireless with ANC" },
+            { id: 34, name: "Realme Buds Air 5", price: 2999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRm_RD8ZjUFOHmbT82LjmPOFc3CqHr5reDX8Yn-dXaVa0uRw2yf3gAEG4D4KPoNDfUMyA&usqp=CAU", category: "headphones", description: "TWS with ultra low-latency" },
+            { id: 35, name: "Beats Studio3", price: 14999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPeP2Zn2zWzsjqYthgtXEEnwiccoBWCHAQ5aP-FDTNK-ptBGVtPe4DEs-kvwckFpE1VwA&usqp=CAU", category: "headphones", description: "Apple integrated wireless headset" },
+            { id: 36, name: "Samsung Galaxy Tab S9", price: 73999, image: "https://rukminim2.flixcart.com/image/704/844/xif0q/tablet/y/t/p/-original-imah69ythvhzcwyy.jpeg?q=20&crop=false", category: "tablets", description: "Powerful Android tablet with S Pen" },
+            { id: 37, name: "Lenovo Tab P11 Pro", price: 29999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLozhP-vyh2AX0P89-pxUZ8cFkfiQaX6GNrnt1KAYZzIfD-bc3ZWu3fN2OPH_OdnSDXx4&usqp=CAU", category: "tablets", description: "Great display for work and play" },
+            { id: 38, name: "iPad Mini", price: 49999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVJJiu7Zb43x88hZQq0AfdD6owmhQRJ8OUXLYRg399AVkPmkCF5x_Vb-0_qRtHL08NXj0&usqp=CAU", category: "tablets", description: "Compact and mighty" },
+            { id: 39, name: "Xiaomi Pad 6", price: 26999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUm-qPSuteLyXjrLsJfwRe3olJs5atgJn3goW_yVl4gzEIm38zT5WtPX22CA0h79Lomh4&usqp=CAU", category: "tablets", description: "Flagship Android tab for all use" },
+            { id: 40, name: "Realme Pad X", price: 19999, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwM5pu6Ib5OiK7VIMbOoD8GHV48KskPrhIpXJWxqRIx7fTZDB4Mq0LCFSIavFboySX3RI&usqp=CAU", category: "tablets", description: "Affordable productivity tab" }
         ];
 
         let cart = [];
